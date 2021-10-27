@@ -23,9 +23,9 @@ version := "1.0"
 // Want to use a published library in your project?
 // You can define other libraries as dependencies in your build like this:
 
-val akkaVersion = "2.6.10"
-val akkaHttpVersion = "10.1.11"
-val scalaAsyncVersion = "0.10.0"
+val akkaVersion = "2.6.17"
+val akkaHttpVersion = "10.2.6"
+val scalaAsyncVersion = "1.0.0"
 
 // libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
 libraryDependencies ++= Seq(
@@ -41,6 +41,7 @@ libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided
 )
 
+scalacOptions += "-Xasync"
 // Here, `libraryDependencies` is a set of dependencies, and by using `+=`,
 // we're adding the scala-parser-combinators dependency to the set of dependencies
 // that sbt will go and fetch when it starts up.

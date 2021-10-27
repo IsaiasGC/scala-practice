@@ -6,7 +6,7 @@ import scala.concurrent.Future
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-import tools.logging.Logger.{info, error}
+import tools.logging.Logger.{info, erro}
 import tools.Tools.{awaitResult, currentTime}
 
 object Main extends App {
@@ -34,7 +34,7 @@ object Main extends App {
         info(s"Stock prices are: $x")
       }
       case Failure(e) => {
-        error(s"Ocurrio un error: ${e.getMessage}")
+        erro(s"Ocurrio un error: ${e.getMessage}")
       }
     }
   }
