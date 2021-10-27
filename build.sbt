@@ -26,19 +26,20 @@ version := "1.0"
 val akkaVersion = "2.6.17"
 val akkaHttpVersion = "10.2.6"
 val scalaAsyncVersion = "1.0.0"
+val scalaParserVersion = "1.1.2"
 
-// libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.1.2"
 libraryDependencies ++= Seq(
+  "org.scala-lang.modules" %% "scala-parser-combinators" % scalaParserVersion,
+  // scala async
+  "org.scala-lang.modules" %% "scala-async" % scalaAsyncVersion,
+  "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided,
   // akka streams
   "com.typesafe.akka" %% "akka-stream" % akkaVersion,
   // akka http
   "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
   "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
   // akka actors
-  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
-  // scala async
-  "org.scala-lang.modules" %% "scala-async" % scalaAsyncVersion,
-  "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided
+  "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion
 )
 
 scalacOptions += "-Xasync"
